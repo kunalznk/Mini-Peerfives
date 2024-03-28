@@ -26,7 +26,15 @@ const userService = {
     } catch (error) {
       throw error.response.data.error;
     }
-  }
+  },
+  updateUser: async (name, id) => {
+    try {
+      const response = await customAxios.patch(`/users/${id}`, { name });
+      return response.data;
+    } catch (error) {
+      throw error.response.data.error;
+    }
+  },
 };
 
 export default userService;

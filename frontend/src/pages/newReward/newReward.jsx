@@ -38,7 +38,6 @@ const NewReward = () => {
   }, [id]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
       await rewardHistoryService.createReward(id, rewardAmount, selectedUser);
       navigate(`/${id}/rewards`);
@@ -49,9 +48,7 @@ const NewReward = () => {
   };
 
   const handleCancel = () => {
-    navigate({
-     to: -1   
-    })
+    navigate(-1)
   };
 
   const handleRewardAmountChange = (e) => {
@@ -62,7 +59,7 @@ const NewReward = () => {
   return (
     <div className="new-reward-container">
       <h2>New Reward</h2>
-      <form onSubmit={handleSubmit} className="new-reward-form">
+      <div className="new-reward-form">
         <label htmlFor="recipient">Recipient:</label>
         <select
           id="recipient"
@@ -86,11 +83,12 @@ const NewReward = () => {
         />
     <span>P5 Balance: {p5Balance}</span>
         <br />
-        <button type="submit" disabled={rewardAmount > 100 || rewardAmount > p5Balance}>
+        <button onClick={async () => await handleSubmit()}
+        type="submit" disabled={rewardAmount > 100 || rewardAmount > p5Balance}>
           Submit
         </button>
         <button type="button" onClick={handleCancel}>Cancel</button>
-      </form>
+      </div>
     </div>
   );
 };

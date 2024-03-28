@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import './index.css'; 
 import rewardHistoryService from '../../services/rewardHistoryService';
 import userService from '../../services/userService';
@@ -8,6 +8,7 @@ const Points = () => {
   const { id } = useParams();
   const [p5Balance, setP5Balance] = useState(0);
   const [p5History, setP5History] = useState([]);
+  const navigate =  useNavigate()
 
   useEffect(() => {
     const fetchP5History = async () => {
@@ -35,8 +36,8 @@ const Points = () => {
 
   const handleDeleteP5 = async (p5Id) => {
     try {
-      const rewards = await rewardHistoryService.deleteRewardById(p5Id)
-      console.log(rewards);
+       await rewardHistoryService.deleteRewardById(p5Id)
+       navigate(-1)
     } catch (error) {
       console.error('Error deleting P5:', error);
       // Handle error

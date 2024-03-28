@@ -62,8 +62,26 @@ const getUserById = async (req: Request, res: Response) => {
     }
 }
 
+const updateUser = async (req: Request, res: Response) => {
+
+    try {
+
+        const { name } = req.body;
+        const { id } = req.params;
+        let user = await UserModel.findByIdAndUpdate(id, { name })
+        const { data, statusCode } = buildSuccessMessage(user);
+        res.status(statusCode).json(data);
+
+    } catch (error) {
+
+        const { data, statusCode } = buildFailMessage(error);
+        res.status(statusCode).json(data);
+    }
+}
+
 export default {
     createUser,
     getUsers,
-    getUserById
+    getUserById,
+    updateUser
 }

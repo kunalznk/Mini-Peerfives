@@ -26,7 +26,7 @@ const ViewUser = () => {
 
   const handleSave = async () => {
     try {
-      // Implement saving user details
+      await userService.updateUser(name, id)
     } catch (error) {
       console.error('Error saving user details:', error);
       // Handle error
@@ -36,7 +36,7 @@ const ViewUser = () => {
   return (
     <div className="user-form-container">
       <h2 className="user-form-header">View User</h2>
-      <form className="user-form">
+      <div className="user-form">
         <label className="user-label" htmlFor="name">Name:</label>
         <input
           className="user-input"
@@ -47,7 +47,7 @@ const ViewUser = () => {
         />
         <br />
         <button className="user-button" onClick={handleSave}>Save</button>
-      </form>
+      </div>
       <div>
         <button>
           <Link to={`/${id}/p5`}>P5 Balance: {p5Balance}</Link>
