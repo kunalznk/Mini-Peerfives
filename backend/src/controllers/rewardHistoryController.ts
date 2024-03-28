@@ -104,8 +104,47 @@ const getPointsHistoryByUserId = async (req: Request, res: Response) => {
     }
 };
 
+const deleteReward =  async (req: Request, res: Response) => {
+    const session = await startSession();
+    session.startTransaction();
+
+    try {
+        const { id } = req.params;
+        const rewardHistory = await RewardHistoryModel.findOneAndDelete({ _id: id }).session(session);
+
+        if (!rewardHistory) {
+            throw new AppError("invalid reward", 404);
+        }
+
+        await Promise.all([
+            UserModel.findByIdAndUpdate(
+                rewardHistory.givenBy,
+                { $inc: { points: rewardHistory.points } },
+                { session }
+            ),
+            UserModel.findByIdAndUpdate(
+                rewardHistory.givenTo,
+                { $inc: { rewards: -1 * rewardHistory.points } },
+                { session }
+            )
+        ]);
+
+        await session.commitTransaction();
+        session.endSession();
+
+        const { data, statusCode } = buildSuccessMessage(rewardHistory);
+        res.status(statusCode).json(data);
+    } catch (error) {
+        console.log(error);
+        const { data, statusCode } = buildFailMessage(error);
+        res.status(statusCode).json(data);
+    }
+}
+
+
 export default {
     createReward,
     getRewardHistoryByUserId,
-    getPointsHistoryByUserId
+    getPointsHistoryByUserId,
+    deleteReward
 }
