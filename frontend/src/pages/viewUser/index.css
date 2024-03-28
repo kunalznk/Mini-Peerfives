@@ -1,0 +1,43 @@
+/* UserForm.css */
+
+.user-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .user-form-header {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .user-form {
+    margin-bottom: 20px;
+  }
+  
+  .user-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .user-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .user-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .user-button:hover {
+    background-color: #0056b3;
+  }
+  

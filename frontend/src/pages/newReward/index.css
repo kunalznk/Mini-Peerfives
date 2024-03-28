@@ -1,0 +1,47 @@
+/* NewReward.css */
+
+.new-reward-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .new-reward-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .new-reward-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .new-reward-form select,
+  .new-reward-form input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .new-reward-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .new-reward-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .new-reward-form span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
+  

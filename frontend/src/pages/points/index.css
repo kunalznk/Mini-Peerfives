@@ -1,0 +1,56 @@
+/* P5History.css */
+
+.p5-history-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .p5-history-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .p5-history-container div {
+    margin-bottom: 20px;
+  }
+  
+  .p5-history-container a {
+    display: inline-block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .p5-history-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .p5-history-table th,
+  .p5-history-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .p5-history-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .p5-history-table td {
+    vertical-align: middle;
+  }
+  
+  .p5-history-container button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .p5-history-container button:hover {
+    background-color: #c82333;
+  }
+  

@@ -1,0 +1,42 @@
+/* NewUser.css */
+
+.new-user-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .new-user-header {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .new-user-form {
+    margin-bottom: 20px;
+  }
+  
+  .new-user-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .new-user-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .new-user-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .new-user-button:hover {
+    background-color: #0056b3;
+  }
+  

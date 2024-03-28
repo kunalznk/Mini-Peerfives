@@ -1,0 +1,35 @@
+
+.reward-history-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .reward-history-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .reward-history-container div {
+    margin-bottom: 20px;
+  }
+  
+  .reward-history-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .reward-history-container th,
+  .reward-history-container td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .reward-history-container th {
+    background-color: #f2f2f2;
+  }
+  
+  .reward-history-container td {
+    vertical-align: middle;
+  }
+  

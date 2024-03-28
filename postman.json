@@ -1,0 +1,105 @@
+{
+    "info": {
+        "_postman_id": "6e168f5a-34f4-4e99-9da7-4375af37e9ec",
+        "name": "User Management APIs",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create User",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"John Doe\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/users",
+                    "protocol": "{{baseUrl}}",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "users"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Users",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/users?page=1&size=10",
+                    "protocol": "{{baseUrl}}",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "users"
+                    ],
+                    "query": [
+                        {
+                            "key": "page",
+                            "value": "1",
+                            "disabled": true
+                        },
+                        {
+                            "key": "size",
+                            "value": "10",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get User by ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/users/USER_ID",
+                    "protocol": "{{baseUrl}}",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "users",
+                        "USER_ID"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Reward History by User ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/reward-history?userId=USER_ID",
+                    "protocol": "{{baseUrl}}",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "reward-history"
+                    ],
+                    "query": [
+                        {
+                            "key": "userId",
+                            "value": "USER_ID",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
