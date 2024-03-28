@@ -1,7 +1,7 @@
 require('dotenv').config()
 import mongoose from "mongoose";
 
-const mongo = mongoose.connect("mongodb+srv://kunalznk:Mumbai%254088@cluster0.ijls3.mongodb.net/" ,  {
+const mongo = mongoose.connect(process.env.DB! ,  {
     autoIndex:false,
     autoCreate:true,
     dbName:"min-peerfives",
